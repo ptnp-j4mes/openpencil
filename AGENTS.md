@@ -6,6 +6,20 @@ This file provides guidance to Codex when working with code in this repository.
 
 For full guidance see **`CLAUDE.md`** (this directory). Authoritative Rust architecture lives in **`crates/CLAUDE.md`**; remaining packages in **`packages/CLAUDE.md`**.
 
+## Design-first UI work
+
+For new UI, redesigns, dashboards, forms, tables, or other material visual changes, use **`.agents/skills/openpencil-design-first/SKILL.md`**.
+
+The default workflow is **design first, implementation second**:
+- create and verify the structured `.op` design through OpenPencil MCP
+- preserve node tree, components, variables/tokens, vectors, and responsive intent
+- stop at the design gate
+- do not start codegen or application implementation until the user explicitly approves the current design
+
+Code-only fixes with no meaningful design change do not need the design gate.
+
+See **`docs/codex-design-first-workflow.md`** for the architecture and handoff model.
+
 ## Commands
 
 Tooling is **Cargo** (Rust — the product). The root has **no `package.json`**; the JS/**Bun** tooling for the web SDK lives under `packages/` — run SDK/JS scripts from there.
